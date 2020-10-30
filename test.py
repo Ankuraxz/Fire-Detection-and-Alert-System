@@ -7,15 +7,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.python.keras.models import load_model
 print("LOADING MODEL...")
-reconstructed_model = load_model("./model_fire.h5")
+reconstructed_model = load_model("./model.h5") #Tensorflow model should be same, as the Google Collab or platform where .h5 file was developed
 def predict(img):
     img = cv2.resize(img, (224,224),  interpolation = cv2.INTER_NEAREST)
-    img = img.reshape((1,) + img.shape)
+    img = img.reshape((1,) + img.shape) # Size (1,224,224,3)
     #print(img.shape)
-    res = reconstructed_model.predict(img)
+    res = reconstructed_model.predict(img) #Sigmoid in last layer
     return(float(res)) #0- Fire, 1- No- Fire
 print("MODEL LOADED SUCCESSFULLY ")
-cam = cv2.VideoCapture("./DataSets/Video/videoplayback.mp4")
+cam = cv2.VideoCapture("./DataSets/Video/videoplayback.mp4") #Any Video or Image
 
 while True:
     ret, img = cam.read()
@@ -30,10 +30,10 @@ while True:
     result = predict(img)
     if result>0.50:
         print("No Fire")
-        img = cv2.putText(img, 'NO FIRE', (50, 50) , cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0) , 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'NO FIRE', (50, 50) , cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0) , 1, cv2.LINE_AA) #Blue
         cv2.imshow("frame",img)
     elif result<0.50:
         print("Fire")
-        img = cv2.putText(img, 'ALERT FIRE', (50, 50) , cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0) , 1, cv2.LINE_AA)
+        img = cv2.putText(img, 'ALERT FIRE', (50, 50) , cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0) , 1, cv2.LINE_AA) #Blue
         cv2.imshow("frame",img)
     #print(result)
