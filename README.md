@@ -14,7 +14,7 @@ This Project takes input (Image) from sources like Camera attached to drone, CCT
 ## Applications
 1.Control Over Forest Fires
 
-2.Control over Parali Burning in North Indian States
+2.Control over Parali(Stubble) Burning in North Indian States
 
 3.Helping Firefighters to overcome fire in Cities etc.
 
