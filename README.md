@@ -7,9 +7,9 @@ This Project takes input (Image) from sources like Camera attached to drone, CCT
 
 ## Model
 Model: "sequential"
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
+
+Layer (type)                 Output Shape              Param  
+
 conv2d (Conv2D)              (None, 222, 222, 32)      896       
 _________________________________________________________________
 conv2d_1 (Conv2D)            (None, 220, 220, 64)      18496     
@@ -47,10 +47,10 @@ _________________________________________________________________
 dropout_4 (Dropout)          (None, 32)                0         
 _________________________________________________________________
 dense_3 (Dense)              (None, 1)                 33        
-=================================================================
-Total params: 2,647,553
+
+*Total params: 2,647,553
 Trainable params: 2,647,553
-Non-trainable params: 0
+Non-trainable params: 0*
 _________________________________________________________________
 
 ## Results
