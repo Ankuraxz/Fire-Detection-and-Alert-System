@@ -53,6 +53,12 @@ Trainable params: 2,647,553
 Non-trainable params: 0
 _________________________________________________________________
 
+## Results
+### ACCURACY
+![Accuracy]( /Images/acc.png "Accuracy")
+### LOSS
+![Loss]( /Images/loss.png "Loss")
+
 ## References
 1. https://breckon.org/toby/publications/papers/dunnings18fire.pdf
 
